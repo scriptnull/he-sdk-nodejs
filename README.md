@@ -32,22 +32,40 @@ var settings = {
 
 ## Functions
 
-Input your source program like this 
+Input your source program as a string like this 
 ```javascript 
 var source = "using System;class MyClass{static void Main(string[] args) {System.Console.WriteLine(\"Hello World!\\n\");}}";
+```
+or input the program from a source file by mentioning the file path like this 
+```javascript
+var filepath = "E:\\E\\temporary files\\MyClass.cs";
 ```
 
 ### compile(settings , source , callback)
 ```javascript
-he.compile(settings , source , function(err , res){
-	console.log(res);
+he.compile(settings , source , function(err , result){
+	console.log(result);
 });
 ```
 
 ### run(settings , source , callback)
 ```javascript
-he.run(settings , source , function(err , res){
-	console.log(res);
+he.run(settings , source , function(err , result){
+	console.log(result);
+});
+```
+
+### compileFile(settings , filepath , callback)
+```javascript
+he.compileFile(settings , filepath , function(err,result){
+	console.log(result);
+});
+```
+
+### runFile(settings , filepath , callback)
+```javascript
+he.runFile(settings , filepath , function(err,result){
+	console.log(result);
 });
 ```
 

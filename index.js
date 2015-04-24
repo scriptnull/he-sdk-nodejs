@@ -1,5 +1,6 @@
 var querystring = require('querystring');
 var http = require('http');
+var fs = require('fs');
 
 module.exports.compile = function(settings , source , callback ){
 	requestMaker(settings , source , 0 , callback);
@@ -7,6 +8,28 @@ module.exports.compile = function(settings , source , callback ){
 
 module.exports.run = function(settings , source , callback){
 	requestMaker(settings , source , 1 , callback);
+}
+
+module.exports.compileFile = function(settings , filePath , callback){
+	fs.readFile(filePath , { encoding : 'utf8'} , function(err,data){
+		if(err)
+			callback(err , data);
+		else
+		{
+			requestMaker(settings, data, 0, callback);
+		}
+	});
+}
+
+module.exports.runFile = function(settings , filePath , callback){
+	fs.readFile(filePath , { encoding : 'utf8'} , function(err,data){
+		if(err)
+			callback(err , data);
+		else
+		{
+			requestMaker(settings, data, 1, callback);
+		}
+	});
 }
 
 requestMaker = function( post_data , source , mode , callback ){
