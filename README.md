@@ -30,7 +30,7 @@ var settings = {
 };
 ```
 
-## Functions
+## API
 
 Input your source program as a string like this 
 ```javascript 
@@ -41,36 +41,47 @@ or input the program from a source file by mentioning the file path like this
 var filepath = "E:\\E\\temporary files\\MyClass.cs";
 ```
 
-### compile(settings , source , callback)
+#### compile(settings , source , callback)
 ```javascript
 he.compile(settings , source , function(err , result){
 	console.log(result);
 });
 ```
 
-### run(settings , source , callback)
+#### run(settings , source , callback)
 ```javascript
 he.run(settings , source , function(err , result){
 	console.log(result);
 });
 ```
 
-### compileFile(settings , filepath , callback)
+#### compileFile(settings , filepath , callback)
 ```javascript
 he.compileFile(settings , filepath , function(err,result){
 	console.log(result);
 });
 ```
 
-### runFile(settings , filepath , callback)
+#### runFile(settings , filepath , callback)
 ```javascript
 he.runFile(settings , filepath , function(err,result){
 	console.log(result);
 });
 ```
 
-# Disclaimer
+## Help 
+This package lets you compile code belonging to various programming languages via the HackerEarth API. However, If you want to implement your own code compiling server , you may take a look at [compilex](https://www.npmjs.com/package/compilex) 
+
+## Contributing
+Contributions are more than welcomed !
+You can 
+- Report a Bug
+- Write Tests
+- Help write the command line package using this SDK 
+- Write an Example app and spread the word.
+
+## Disclaimer
 The [HackerEarth API v2](https://www.hackerearth.com/docs/api/developers/code/legacy/) is a copyright of HackerEarth Inc. and this is an unofficial SDK that acts as wrapper for accessing the service provided by HackerEarth Inc.
 
-#License
+## License
 This repository is licensed under the [MIT License](https://github.com/scriptnull/he-sdk-nodejs/blob/master/LICENSE) .
