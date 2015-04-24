@@ -1,0 +1,24 @@
+{
+  "name": "he-sdk-nodejs",
+  "version": "0.0.1",
+  "description": "node.js SDK for HackerEarth API ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scriptnull/he-sdk-nodejs.git"
+  },
+  "keywords": [
+    "hackerearth",
+    "online",
+    "compiler"
+  ],
+  "author": "Vishnu Bharathi <vishnubharathi04@gmail.com> (https://twitter.com/scriptnull)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scriptnull/he-sdk-nodejs/issues"
+  },
+  "homepage": "https://github.com/scriptnull/he-sdk-nodejs"
+}
