@@ -4,11 +4,11 @@ var fs = require('fs');
 
 module.exports.compile = function(settings , source , callback ){
 	requestMaker(settings , source , 0 , callback);
-}
+};
 
 module.exports.run = function(settings , source , callback){
 	requestMaker(settings , source , 1 , callback);
-}
+};
 
 module.exports.compileFile = function(settings , filePath , callback){
 	fs.readFile(filePath , { encoding : 'utf8'} , function(err,data){
@@ -19,7 +19,7 @@ module.exports.compileFile = function(settings , filePath , callback){
 			requestMaker(settings, data, 0, callback);
 		}
 	});
-}
+};
 
 module.exports.runFile = function(settings , filePath , callback){
 	fs.readFile(filePath , { encoding : 'utf8'} , function(err,data){
@@ -30,7 +30,7 @@ module.exports.runFile = function(settings , filePath , callback){
 			requestMaker(settings, data, 1, callback);
 		}
 	});
-}
+};
 
 requestMaker = function( post_data , source , mode , callback ){
 	  	data = querystring.stringify({
@@ -51,10 +51,16 @@ requestMaker = function( post_data , source , mode , callback ){
 	    'Content-Length': data.length
 	  }
 	};
+	var response = '';
 	var req = http.request(options , function(res){
 		res.on('data' , function(chunk){
-			callback(null , chunk.toString());
+			response += chunk.toString();
 		});
+		
+		res.on('end' , function(){
+			callback(null , response );
+		});
+		
 		res.on('error' , function(err){
 			callback(err , null );
 		});
@@ -64,4 +70,4 @@ requestMaker = function( post_data , source , mode , callback ){
 	})
 	req.write(data);
 	req.end();
-}
+};
