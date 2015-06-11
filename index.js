@@ -67,7 +67,7 @@ requestMaker = function( post_data , source , mode , callback ){
 	});
 	req.on('error' , function(err){
 		callback(err , null);
-	})
+	});
 	req.write(data);
 	req.end();
 };
