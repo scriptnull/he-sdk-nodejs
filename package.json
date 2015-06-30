@@ -1,6 +1,6 @@
 {
   "name": "he-sdk-nodejs",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "node.js SDK for HackerEarth API ",
   "main": "index.js",
   "scripts": {
