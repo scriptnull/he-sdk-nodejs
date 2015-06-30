@@ -72,6 +72,10 @@ he.runFile(settings , filepath , function(err,result){
 ## Help 
 This package lets you compile code belonging to various programming languages via the HackerEarth API. However, If you want to implement your own code compiling server , you may take a look at [compilex](https://www.npmjs.com/package/compilex) 
 
+## Samples
+Here are few samples built with this SDK. If you have got one , feel free to add it here and send a pull request or contact me.
+- [collab-and-code](https://github.com/mithunkumarnallu/collab-and-code) by [@mithunkumarnallu](https://github.com/mithunkumarnallu) 
+
 ## Contributing
 Contributions are more than welcomed !
 You can 
